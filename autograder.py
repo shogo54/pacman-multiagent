@@ -306,7 +306,6 @@ def evaluate(generateSolutions, testRoot, moduleDict, exceptionMap=ERROR_HINT_MA
     return grades.points
 
 
-
 def getDisplay(graphicsByDefault, options=None):
     graphics = graphicsByDefault
     if options is not None and options.noGraphics:
@@ -321,10 +320,9 @@ def getDisplay(graphicsByDefault, options=None):
     return textDisplay.NullGraphics()
 
 
-
-
-if __name__ == '__main__':
-    options = readCommand(sys.argv)
+def main(args):
+    # options = readCommand(sys.argv)
+    options = readCommand(args.split())
     if options.generateSolutions:
         confirmGenerate()
     codePaths = options.studentCode.split(',')
@@ -349,3 +347,7 @@ if __name__ == '__main__':
         evaluate(options.generateSolutions, options.testRoot, moduleDict,
             edxOutput=options.edxOutput, muteOutput=options.muteOutput, printTestCase=options.printTestCase,
             questionToGrade=options.gradeQuestion, display=getDisplay(options.gradeQuestion!=None, options))
+
+
+if __name__ == '__main__':
+    main(sys.argv)
