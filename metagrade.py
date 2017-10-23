@@ -13,11 +13,14 @@ Call with for example -t test_cases/q2/0-small-tree for one particular test case
 '''
 
 # autograder.main('')
-autograder.main('-q q1 --no-graphics')
+# autograder.main('-q q1 --no-graphics')
+# autograder.main('-q q2')
 # autograder.main('-q q2 --no-graphics')
+# autograder.main('-q q3')
 # autograder.main('-q q3 --no-graphics')
+# autograder.main('-q q4')
 # autograder.main('-q q4 --no-graphics')
-# autograder.main('-q q5 --no-graphics')
+autograder.main('-q q5 --no-graphics')
 
 # How to run one specific test case:
 # autograder.main('-t test_cases/q2/0-small-tree')
