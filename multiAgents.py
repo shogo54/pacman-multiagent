@@ -171,12 +171,6 @@ class MinimaxAgent(MultiAgentSearchAgent):
             currentDepth += 1
         if currentDepth == self.depth:
             return self.evaluationFunction(gameState)
-        """
-        if gameState.isWin():
-            return sys.maxint
-        if self.isLoss():
-            return -sys.maxint - 1
-        """
         if agentIndex == 0:
             return self.maxValue(gameState, currentDepth, agentIndex)
         if agentIndex >= 1:
@@ -233,12 +227,6 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
             currentDepth += 1
         if currentDepth == self.depth:
             return self.evaluationFunction(gameState)
-        """
-        if gameState.isWin():
-            return sys.maxint
-        if self.isLoss():
-            return -sys.maxint - 1
-        """
         if agentIndex == 0:
             return self.alphaBetaMaxValue(gameState, currentDepth, agentIndex, alpha, beta)
         if agentIndex >= 1:
@@ -299,12 +287,6 @@ class ExpectimaxAgent(MultiAgentSearchAgent):
             currentDepth += 1
         if currentDepth == self.depth:
             return self.evaluationFunction(gameState)
-        """
-        if gameState.isWin():
-            return sys.maxint
-        if self.isLoss():
-            return -sys.maxint - 1
-        """
         if agentIndex == 0:
             return self.maxValue(gameState, currentDepth, agentIndex)
         if agentIndex >= 1:
@@ -336,7 +318,7 @@ def betterEvaluationFunction(currentGameState):
       evaluation function (question 5).
 
       DESCRIPTION: <write something here so we know what you did>
-      this is apparently same as my evaluation function 
+      this is apparently same as my evaluation function
     """
     "*** YOUR CODE HERE ***"
     # Useful information you can extract from a GameState (pacman.py)
@@ -345,7 +327,6 @@ def betterEvaluationFunction(currentGameState):
     newGhostStates = currentGameState.getGhostStates()
     newScaredTimes = [ghostState.scaredTimer for ghostState in newGhostStates]
 
-    "*** YOUR CODE HERE ***"
     minDisToGhost = sys.maxint
     for ghostState in newGhostStates:
         disToGhost = searchAgents.aStarMazeDistance(ghostState.getPosition(), newPos, currentGameState)

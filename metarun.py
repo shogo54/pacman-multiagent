@@ -1,5 +1,4 @@
 import pacman
-import autograder
 
 '''
 metarun.py runs things that look like command-line arguments
@@ -26,4 +25,7 @@ You should comment out all lines in the file except one!
 # question 4 - expectimax
 #pacman.main('python pacman.py -p ExpectimaxAgent -l minimaxClassic -a depth=3')
 #pacman.main('python pacman.py -p AlphaBetaAgent -l trappedClassic -a depth=3 -q -n 10')
-pacman.main('python pacman.py -p ExpectimaxAgent -l trappedClassic -a depth=3 -q -n 10')
+#pacman.main('python pacman.py -p ExpectimaxAgent -l trappedClassic -a depth=3 -q -n 10')
+
+# question 5 - better evaluation function
+pacman.main('python pacman.py -p AlphaBetaAgent -l mediumClassic -a depth=3')
